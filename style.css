@@ -1,0 +1,116 @@
+:root {
+    --space: 20px;
+    --height: 100vh;
+    --primary: black;
+    --secandory: white;
+    --box: 300px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--secandory);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+}
+
+/* Nabar */
+header {
+    padding: var(--space);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: var(--space);
+}
+
+/* Main */
+main {
+    height: calc(100vh - 70px);
+}
+
+main h1 {
+    font-size: 5em;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+#string{
+    width: 100%;
+    height: 300px;
+    padding-top: 3em;
+    display: flex;
+}
+
+/* Parent Container */
+.container {
+    margin: var(--space);
+    padding: var(--space);
+    overflow-x: hidden;
+}
+
+.white-container {
+    background-color: var(--secandory);
+    height: var(--height);
+    margin: 0px;
+    padding: 0px;
+}
+
+.black-container {
+    background-color: var(--primary);
+    height: var(--height);
+}
+
+.white-box{
+    background-color: var(--secandory);
+}
+
+.black-text{
+    color: var(--primary) !important;
+}
+
+/*  */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    padding-top: 38vh;
+    text-align: center;
+}
+
+.y-hidden{
+    overflow: hidden;
+}
+
+.box {
+    width: var(--box);
+    height: var(--box);
+    margin: var(--space);
+    background-color: var(--secandory);
+}
+
+.five h2{
+    font-size: 40vw;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+h3 {
+    font-size: x-large;
+}
