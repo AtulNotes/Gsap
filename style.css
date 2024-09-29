@@ -3,7 +3,7 @@
     --height: 100vh;
     --primary: black;
     --secandory: white;
-    --box: 300px;
+    --box: 20vw;
 
 }
 
@@ -36,21 +36,27 @@ nav {
 
 /* Main */
 main {
-    height: calc(100vh - 70px);
+    height: 85vh;
+    display: grid;
+    align-items: end;
+    justify-items: center;
 }
+
+
 
 main h1 {
-    font-size: 5em;
+    font-size: 7vw;
     text-align: center;
-    margin-top: 20vh;
+    padding: 0 20px;
 }
 
-#string{
+#string {
     width: 100%;
-    height: 300px;
-    padding-top: 3em;
+    height: 150px;
     display: flex;
+    /* background-color: red; */
 }
+
 
 /* Parent Container */
 .container {
@@ -66,16 +72,18 @@ main h1 {
     padding: 0px;
 }
 
+
+
 .black-container {
     background-color: var(--primary);
     height: var(--height);
 }
 
-.white-box{
+.white-box {
     background-color: var(--secandory);
 }
 
-.black-text{
+.black-text {
     color: var(--primary) !important;
 }
 
@@ -86,12 +94,12 @@ main h1 {
     align-items: center;
 }
 
-.center{
+.center {
     padding-top: 38vh;
     text-align: center;
 }
 
-.y-hidden{
+.y-hidden {
     overflow: hidden;
 }
 
@@ -102,7 +110,7 @@ main h1 {
     background-color: var(--secandory);
 }
 
-.five h2{
+.five h2 {
     font-size: 40vw;
     text-transform: uppercase;
 }
@@ -113,4 +121,75 @@ h2 {
 
 h3 {
     font-size: x-large;
+}
+
+.sh {
+    height: 100vh;
+}
+
+.seven h2 {
+    overflow: hidden;
+}
+
+.seven h2 span {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+#cursor {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secandory);
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    position: fixed;
+    z-index: 100;
+    font-size: 2px !important;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.six {
+    height: 100vh;
+    background-color: var(--secandory);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.six .img-container1 {
+    width: 60vw;
+    height: 80vh;
+    position: relative;
+}
+
+.six .img-container1 .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+}
+
+.six .img-container1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  */
+@media (max-width: 600px) {
+    main {
+        height: 100vh;
+    }
+
+    .m-none {
+        display: none !important;
+    }
 }

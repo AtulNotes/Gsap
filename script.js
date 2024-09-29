@@ -2,13 +2,30 @@ let tl = gsap.timeline();
 // gsap.registerPlugin(ScrollTrigger);
 // Navbar
 tl.from(
-    'nav h3', {
+    'header h3', {
     y: -20,
     duration: 1,
     opacity: 0,
     stagger: 1, // stagger is used to delay the animation of each element
     // repeat: -1, // repeat the animation infinitely
     // yoyo: true, // yoyo effect is used to go back to the initial position
+})
+
+// cursor
+const body = document.querySelector('body')
+const cursor = document.querySelector('#cursor')
+
+body.addEventListener('mousemove', (e) => {
+    // console.log(e.screenX);
+
+    gsap.to(
+        cursor, {
+        left: e.x,
+        top: e.y,
+        duration: 1,
+        ease: "ease-in-out",
+    },
+    )
 })
 
 // main
@@ -21,12 +38,13 @@ tl.from(
 })
 
 // String
-let initialPath = `M 200 100 Q 650 100 1300 100`
+let initialPath = `M 60 100 Q 600 100 1200 100`
 
 let string = document.querySelector('#string')
 
 string.addEventListener('mousemove', (mouse) => {
-    let movePath = `M 200 100 Q ${mouse.x} ${mouse.offsetY} 1300 100`
+    console.log('enter');
+    let movePath = `M 60 100 Q ${mouse.x} ${mouse.offsetY} 1200 100`
     gsap.to(
         "#string svg path", {
         attr: {
@@ -35,11 +53,11 @@ string.addEventListener('mousemove', (mouse) => {
         duration: 0.1,
         ease: "power2.out"
     })
-    console.log(mouse);
-    
 })
 
-string.addEventListener('mouseleave', (mouse) => {
+string.addEventListener('mouseleave', () => {
+    console.log('leave');
+
     gsap.to(
         "#string svg path", {
         attr: {
@@ -54,7 +72,7 @@ string.addEventListener('mouseleave', (mouse) => {
 // Initial to final
 gsap.to(
     "#box1", {
-    x: 1100,
+    x: '65vw',
     duration: 3,
     ease: "bounce",
     repeat: -1,
@@ -166,3 +184,105 @@ gsap.to(
     }
 }
 )
+
+// six
+
+let img1 = document.querySelector('.six .img-container1');
+
+img1.addEventListener('mouseenter', (e) => {
+    cursor.innerHTML = 'View More'
+    gsap.to(
+        cursor, {
+        scale: 6,
+        border: '1px solid transparent',
+        backgroundColor: '#ffffff8a',
+    }
+    )
+})
+
+img1.addEventListener('mouseleave', (e) => {
+    cursor.innerHTML = ''
+    gsap.to(
+        cursor, {
+        scale: 1,
+        border: '1px solid black',
+        backgroundColor: '#fff'
+    }
+    )
+})
+
+// seven
+const breakText = () => {
+    let sevenh1 = document.querySelector('.seven h2');
+    let sevenText = sevenh1.textContent;
+
+    let sevenTextSplit = sevenText.split('')
+    let halftext = sevenTextSplit.length / 2;
+    
+    let clutter = '';
+    sevenTextSplit.forEach((letter, index) => {
+        if (index < halftext) {
+            clutter += `<span class="first">${letter}</span>`
+        } else {
+            clutter += `<span class="second">${letter}</span>`
+        }
+    })
+
+    sevenh1.innerHTML = clutter;
+}
+
+breakText();
+
+gsap.from(
+    '.seven h2 .first', {
+    y: 100,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 0.8,
+})
+
+gsap.from(
+    '.seven h2 .second', {
+    y: 100,
+    opacity: 0,
+    stagger: -0.15,
+    duration: 0.8,
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
